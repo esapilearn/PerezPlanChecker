@@ -1,5 +1,8 @@
 ﻿using ESAPIX.Constraints;
+using ESAPIX.Extensions;
 using Prism.Mvvm;
+using System;
+using VMS.TPS.Common.Model.API;
 
 namespace ESAPX_StarterUI.ViewModels
 {
@@ -26,4 +29,5 @@ namespace ESAPX_StarterUI.ViewModels
             get { return _result; }
             set { SetProperty(ref _result, value); }
         }
-    } }
+    }
+}
