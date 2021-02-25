@@ -13,10 +13,22 @@ namespace ESAPX_StarterUI.ViewModels.Tests
     public class CTDateConstraintTests
     {
         [TestMethod()]
-        public void IsCTTooOldTest()
+        public void IsCTTooOldTest_FAILS_CORRECTLY()
         {
            //arrange
             var daysOld = 61;
+
+            //act
+            var actual = new CTDateConstraint().IsCTTooOld(daysOld).ResultType;
+
+            //assert
+            var expected = ResultType.ACTION_LEVEL_3;
+            Assert.AreEqual(expected, actual);
+        }
+        public void IsCTTooOldTest_PASSES_CORRECTLY()
+        {
+            //arrange
+            var daysOld = 59;
 
             //act
             var actual = new CTDateConstraint().IsCTTooOld(daysOld).ResultType;
